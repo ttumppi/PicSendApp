@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String _ip;
 
-    private WaitForDesktopSignal _waitForDesktopSignalFrag;
+
     private ListenerSocket _listener;
 
     EditText _textPopup;
@@ -122,10 +122,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
     }
 
     @Override
@@ -179,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void HideWaitForDesktopSignalFrag(){
         runOnUiThread(()->{
-            findViewById(R.id.WaitForDesktopSignalContainer).setVisibility(View.GONE);
+            //findViewById(R.id.WaitForDesktopSignalContainer).setVisibility(View.GONE);
 
         });
 
@@ -187,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void ShowWaitForDesktopSignalFrag(){
         runOnUiThread(()->{
-            findViewById(R.id.WaitForDesktopSignalContainer).setVisibility(View.VISIBLE);
+            //findViewById(R.id.WaitForDesktopSignalContainer).setVisibility(View.VISIBLE);
         });
 
     }

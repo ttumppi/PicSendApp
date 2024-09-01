@@ -13,7 +13,7 @@
             app:layout_anchor="@+id/constraintLayout" android:background="@color/white">
 
         <TextView
-                android:text="Start Searching for this app on the Desktop application, when a connection is found, a popup will appear"
+                android:text="Wait for desktop application to find this device on the wifi."
                 android:layout_width="356dp"
                 android:layout_height="111dp" android:id="@+id/InformationText"
                 app:layout_constraintStart_toStartOf="parent"

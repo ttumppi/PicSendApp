@@ -27,15 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-    <androidx.fragment.app.FragmentContainerView
-            android:layout_width="0dp"
-            android:layout_height="0dp" android:name="com.example.PicSend.WaitForDesktopSignal"
-            android:id="@+id/WaitForDesktopSignalContainer"
-            android:clickable="true"
-            tools:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@+id/TopOfScreenContainer"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

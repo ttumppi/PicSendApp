@@ -7,7 +7,7 @@
                                                    tools:context="com.example.PicSend.TopOfScreenFrag" android:id="@+id/ConstraintLayout"
                                                    android:background="@color/white">
     <TextView
-            android:text="PictureSender"
+            android:text="PicSender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/AppNameText"
             app:layout_constraintTop_toTopOf="parent"
