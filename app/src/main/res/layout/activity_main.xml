@@ -27,7 +27,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="420dp"
+            android:layout_height="735dp" android:name="com.example.PicSend.InfoFragment"
+            android:id="@+id/InfoFragmentContainer" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@ import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
+import androidx.fragment.app.FragmentTransaction;
 import com.google.gson.Gson;
 
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private ListenerSocket _listener;
 
     EditText _textPopup;
+
 
 
 
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         _client = new ClientSocket(_endMessage);
+
 
 
 
@@ -129,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERACODE && resultCode == Activity.RESULT_OK) {
             StartSendingImage(data);
+
         }
 
         if (requestCode == CAMERACODE && resultCode == Activity.RESULT_CANCELED){
@@ -143,12 +147,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void ShowInfoFragment(){
+        runOnUiThread(() ->{
+            findViewById(R.id.InfoFragmentContainer).setVisibility(View.VISIBLE);
+        });
+
+    }
+
+    private void HideInfoFragment(){
+        runOnUiThread(() ->{
+            findViewById(R.id.InfoFragmentContainer).setVisibility(View.GONE);
+        });
+
+    }
+
     private void StartSendingImage(Intent data){
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(this).setPositiveButton("OK",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        ShowInfoFragment();
                         String imgName = _textPopup.getText().toString();
                         SendImage(data, imgName);
 
@@ -307,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             _openCameraImage.setEnabled(true);
+                            HideInfoFragment();
                         }
                     });
 
