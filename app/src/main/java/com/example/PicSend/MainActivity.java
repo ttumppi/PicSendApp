@@ -158,12 +158,23 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+        dialog.setCancelable(false);
 
-        _textPopup = new EditText(this);
-        _textPopup.setHint("Enter name of image");
+        _textPopup = CreateAndConfigureTextPopup();
         dialog.setView(_textPopup);
         dialog.show();
     }
+
+    private EditText CreateAndConfigureTextPopup(){
+        _textPopup = new EditText(this);
+        _textPopup.setHint("Enter name of image");
+
+
+
+        return _textPopup;
+    }
+
+
 
 
     private void HideWaitForDesktopSignalFrag(){
