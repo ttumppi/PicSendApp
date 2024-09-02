@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.media.ExifInterface;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -315,13 +316,19 @@ public class MainActivity extends AppCompatActivity {
 
                     byte[] imgDataInBytes = picDataAsJson.getBytes(StandardCharsets.UTF_8);
 
-
                     if (!_client.SendMessage(imgDataInBytes)){
                         ShowNotificationWithOK("failed to send Image");
                     }
 
-
                     _bmp.recycle();
+
+
+                }
+                catch (Exception e)
+                {
+                    ShowNotificationWithOK("Something went wrong with creating/sending image");
+                }
+                finally{
                     ((Activity) MainActivity.this).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -329,11 +336,6 @@ public class MainActivity extends AppCompatActivity {
                             HideInfoFragment();
                         }
                     });
-
-                }
-                catch (Exception e)
-                {
-                    ShowNotificationWithOK("Something went wrong with creating/sending image");
                 }
             });
             try{

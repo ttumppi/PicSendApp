@@ -1,5 +1,8 @@
 package com.example.PicSend;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class PictureData {
 
     public String Name;
@@ -16,9 +19,11 @@ public class PictureData {
     }
 
     private void ConvertByteArrayToUnsignedInt(byte[] bytes){
-        for(int i = 0; i < bytes.length;i++){
 
-            PicData[i] = bytes[i] & 0XFF;
-        }
+        PicData = IntStream.range(0, bytes.length)
+                .parallel()
+                .map(i -> bytes[i] & 0xFF)
+                .toArray();
+
     }
 }
